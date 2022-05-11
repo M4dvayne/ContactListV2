@@ -9,8 +9,18 @@ import SwiftUI
 
 struct ContentView: View {
     var body: some View {
-        Text("Hello, world!")
-            .padding()
+        TabView{
+            Contacts()
+                .tabItem {
+                    Image(systemName: Symbol.mail.rawValue)
+                    Text("Contacts")
+                }
+            Numbers()
+                .tabItem{
+                    Image(systemName: Symbol.phone.rawValue)
+                    Text("Numbers")
+                }
+        }
     }
 }
 
@@ -19,3 +29,4 @@ struct ContentView_Previews: PreviewProvider {
         ContentView()
     }
 }
+
