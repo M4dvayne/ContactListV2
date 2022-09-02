@@ -8,9 +8,12 @@
 import SwiftUI
 
 struct ContentView: View {
+    
+    let persons = Person.getContact()
+    
     var body: some View {
         TabView{
-            Contacts()
+            Contacts(contacts: persons)
                 .tabItem {
                     Image(systemName: Symbol.mail.rawValue)
                     Text("Contacts")

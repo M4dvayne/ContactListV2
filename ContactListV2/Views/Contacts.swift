@@ -8,12 +8,13 @@
 import SwiftUI
 
 struct Contacts: View {
-    let persons = Person.getContact()
+    
+    let contacts: [Person]!
     
     var body: some View {
         NavigationView{
-            NavigationLink(destination: DetailInformation(person: persons)) {
-                List(persons) { person in
+            NavigationLink(destination: DetailInformation(person: contacts)) {
+                List(contacts) { person in
                     Text("\(person.fullName)")
                 }
                 .listStyle(.insetGrouped)
@@ -21,12 +22,6 @@ struct Contacts: View {
             }
             .navigationTitle("Contact List")
         }
-    }
-}
-
-struct Contacts_Previews: PreviewProvider {
-    static var previews: some View {
-        Contacts(persons: Person.getContact())
     }
 }
 
